@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from firebase_admin import firestore, credentials, auth
 import firebase_admin
+from firebase_admin import db
 
 cred = credentials.Certificate('./auth.json')
 default_app = firebase_admin.initialize_app(cred)
