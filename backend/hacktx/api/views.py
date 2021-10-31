@@ -1,10 +1,15 @@
 from django.shortcuts import render
-from firebase_admin import firestore, credentials
 import firebase_admin
+from firebase_admin import db
 
 # Create your views here.
 
-cred = credentials.Certificate('./auth.json')
-firebase_admin.initialize_app(cred)
+firebase_cred_obj = firebase_admin.credentials.Certificate('auth.json')
+default_app = firebase_admin.initialize_app(firebase_cred_obj, {'databaseURL':databaseURL})
 
-db = firestore.client()
+ref = db.reference("/")
+
+import json
+with open("book_info.json", "r") as f:
+	file_contents = json.load(f)
+ref.set(file_contents)
