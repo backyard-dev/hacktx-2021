@@ -3,4 +3,3 @@ firebase-admin
 requests
 djangorestframework
 django-cors-headers
-firebase
