@@ -133,3 +133,4 @@ node_modules/
 
 # Ignore auth.json
 auth.json
+fbconfig.json
